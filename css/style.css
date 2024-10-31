@@ -1,0 +1,227 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+h1{
+  font-weight: 700;
+}
+h2{
+  font-weight: 500;
+}
+h3{
+  font-weight: 400;
+}
+p, span{
+  font-weight: 300;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+nav{
+  background: black;
+  color: white;
+  height: 55px;
+  position: relative;
+  
+}
+nav * {
+  float: left;
+  width: 10%;
+  /* background: black;  interesting I just discovered adding height to headeer would help these children inherit background color from header*/
+  display: block; /*this removed the list style*/
+  border-right: 2px solid white;
+  line-height: 55px;
+  padding: 0 20px 0 20px;
+  text-align: center;
+  /* height: 55px; */ 
+  /* margin-top: 10px;  this cannot be used concurrently with transform*/
+}
+nav > *{
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+  /* margin-right: 10px; this cannot be used concurrently with transform*/
+
+}
+nav ul {
+  width: 60%;
+  margin: 0;
+  border-right: 0;
+  padding: 0;
+  
+  /* list-style: none; */
+}
+nav > ul > li{
+  width: 11%;
+}
+nav input{
+  width: 100%;
+  height: auto;
+}
+nav form, form *:last-child{
+  border-right: 0;
+  line-height: 0;
+}
+nav form{
+  float: right;
+  right: 5%;
+}
+nav img{
+  right: 95%;
+}
+nav a{
+  right: 85%;
+}
+nav img, nav a {
+  padding: 0 15px 0 15px;
+}
+main{
+  float: left;
+  width: 100%;
+}
+.top-section h1 { 
+  float: left;
+  width: 50%;
+  margin: 0;
+}
+.top-section {
+  height: 40px;
+  width: 100%;
+  padding-left: 15px;
+}
+.top-section > span{
+  float: right;
+  width: 50%;
+  text-align: right;
+  top: 50%;
+  transform: translateY(50%);
+  color: grey;
+  padding-right: 10px;
+} 
+.upper-left, .upper-left + section{
+  float: left;
+  width: 50%;
+  height: 300px;
+  padding: 0 15px 0 15px;
+  color: white;
+}
+.upper-left + section{
+  background-image: none;
+  background-color: white;
+  padding: 0;
+}
+.upper-left{
+  width: 48%;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+.upper-right{
+  float: left;
+  width: 49%;
+  height: 145px;
+  margin-right: 1.5%;
+  margin-bottom: 5px;
+}
+.upper-left{
+  background: no-repeat url("../uae_and_israel.jpg");
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-origin: border-box;
+}
+.canada{
+  background: no-repeat url("../usa_canada.jpg");
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-origin: border-box;
+}
+.vaccine{
+  background: no-repeat url("../vaccine.jpg");
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-origin: border-box;
+}
+.productivity{
+  background: no-repeat url("../productivity_gyms.jpg");
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-origin: border-box;
+}
+.folk{
+  background: no-repeat url("../folk_singer.webp");
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-origin: border-box;
+}
+.upper-left, .upper-right{
+  position: relative;
+}
+.style{
+  position: absolute;
+  margin: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2%;
+  width: 85%;
+}
+.upper-right:nth-last-child(-n+2) {
+  margin-bottom: 0;
+}
+.upper-right:nth-child(even), main + section > section:last-child{
+  margin-right: 0;
+}
+main + section {
+  float: left;
+
+}
+main + section > section {
+  float: left;
+  width: 32%;
+  margin-right: 1.5%;
+
+}
+main + section > section:first-of-type{
+  margin-left: 1%;
+}
+main + section > section img{
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+
+}
+main + section > h2:first-child{
+  margin-left: 15px;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
